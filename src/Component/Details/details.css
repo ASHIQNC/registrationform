@@ -1,0 +1,12 @@
+.table__container-wrapper {
+  margin-top: 20px;
+}
+
+.table__style {
+  border: 1px solid lightgray;
+}
+
+.idCard__style {
+  display: flex;
+  flex-direction: column;
+}

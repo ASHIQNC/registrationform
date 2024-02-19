@@ -1,0 +1,9 @@
+.navbar__style__wrapper {
+  background-color: #3df0962a;
+}
+
+@media only screen and (max-width: 600px) {
+  .subheading {
+    display: none;
+  }
+}
