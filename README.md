@@ -12,7 +12,7 @@ Application is developed to showcase studentdetails in a table format,were stude
 
 # Technologies
 Project is created with
-CSS
+CSS,
 bootstrap,
 Reactjs,
 expressjs,
