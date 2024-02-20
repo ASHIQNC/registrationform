@@ -17,7 +17,6 @@ const RegistraionForm = () => {
     dob: "",
     country: "",
   });
-  console.log("as0", inputs);
 
   const options = [
     { value: "ece", label: "ECE" },
