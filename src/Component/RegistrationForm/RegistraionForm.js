@@ -17,6 +17,7 @@ const RegistraionForm = () => {
     dob: "",
     country: "",
   });
+  console.log("as0", inputs);
 
   const options = [
     { value: "ece", label: "ECE" },
@@ -259,6 +260,7 @@ const RegistraionForm = () => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
+                    checked={inputs.coursemethod === "online"}
                     value={"online"}
                     name="coursemethod"
                     type="checkbox"
@@ -276,6 +278,7 @@ const RegistraionForm = () => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
+                    checked={inputs.coursemethod === "offline"}
                     name="coursemethod"
                     value={"offline"}
                     type="checkbox"
@@ -294,6 +297,7 @@ const RegistraionForm = () => {
                     onChange={(e) => {
                       handleChange(e);
                     }}
+                    checked={inputs.coursemethod === "hybrid"}
                     name="coursemethod"
                     value={"hybrid"}
                     type="checkbox"
