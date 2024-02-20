@@ -86,7 +86,6 @@ const Details = () => {
                   </td>
                   <td className="whitespace-nowrap px-6 py-4">{item.dob}</td>
                   <td>
-                    {/* baseurl pinna nammmal backend use cheytha path name and pinna api vilicha image url */}
                     <img
                       className="rounded-5 text-center"
                       src={`${BASE_URL}/studentdata/${item.profile}`}
@@ -96,7 +95,6 @@ const Details = () => {
                   </td>
 
                   <td className="idCard__style">
-                    {/* baseurl pinna nammmal backend use cheytha path name and pinna api vilicha image url */}
                     {item.id.map((card) => (
                       <img
                         className="rounded-5 text-center mb-4"

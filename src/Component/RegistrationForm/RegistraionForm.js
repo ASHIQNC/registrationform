@@ -33,7 +33,7 @@ const RegistraionForm = () => {
   const [profile, setProfile] = useState("");
   //image preview
   const [imagePreview, setImagePreview] = useState("");
-  //id card
+  //id cards
   const [id, setId] = useState([]);
   const navigate = useNavigate();
 
@@ -57,12 +57,11 @@ const RegistraionForm = () => {
     }
   }, [profile]);
 
-  //this is the courses that the user is selecting in the dropdown
+  //this is the courses that the user is selecting from the dropdown
   const courseSubmit = (courses) => {
     const data = Array.from(courses);
     setCourses(data);
   };
-  console.log("course", courses);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,15 +84,12 @@ const RegistraionForm = () => {
       dob === "" ||
       country === ""
     ) {
-      // alert("please fill the inputfiels");
       toast.error("please fill the inputfiels");
     } else {
       const headerConfig = {
         "Content-Type": "multipart/form-data",
       };
 
-      //file type content sent chyumpo nammal form data typil aayirikanm body akath send cheyunnath
-      //for that formtype body object create cheyyanm ennit aakanam data send cheyandath
       const data = new FormData();
 
       data.append("studentname", studentname);
@@ -103,7 +99,7 @@ const RegistraionForm = () => {
       data.append("coursemethod", coursemethod);
       data.append("dob", dob);
       courses.forEach((course) => {
-        data.append("courses", course.value); // Assuming value contains the course value
+        data.append("courses", course.value);
       });
       data.append("country", country);
       data.append("profile", profile);
@@ -111,12 +107,9 @@ const RegistraionForm = () => {
         data.append("idcards", id[i]);
       }
 
-      //api call we need to pass header and body
       const result = await addStudentData(data, headerConfig);
-      console.log(result);
+
       if (result.status >= 200 && result.status <= 300) {
-        //reseting the state
-        // toast("data posted successfully");
         setInputs({
           ...inputs,
           studentname: "",
@@ -203,7 +196,7 @@ const RegistraionForm = () => {
                 className="form-label label__style">
                 Gender :
               </label>
-              {/*  */}
+
               <div className="input__radio__Wrapper">
                 <div className="input__gender">
                   <input
@@ -238,8 +231,6 @@ const RegistraionForm = () => {
               </div>
             </div>
 
-            {/* dropdown1 */}
-
             <div className="mb-5 input__wrapper">
               <label
                 style={{ width: "20%" }}
@@ -254,8 +245,6 @@ const RegistraionForm = () => {
                 isMulti
               />
             </div>
-
-            {/* checkbox */}
 
             <div className="mb-5 input__wrapper__Checkbox">
               <label
@@ -320,7 +309,6 @@ const RegistraionForm = () => {
               </div>
             </div>
 
-            {/* dob */}
             <div className="mb-5 input__wrapper">
               <label
                 for="exampleFormControlInput1"
@@ -339,8 +327,6 @@ const RegistraionForm = () => {
                 placeholder="Enter Mobile Number"
               />
             </div>
-
-            {/* photo */}
 
             <div className="mb-5 input__wrapper">
               <label
@@ -365,8 +351,6 @@ const RegistraionForm = () => {
               </div>
             </div>
 
-            {/* upload */}
-
             <div className="mb-5 input__wrapper">
               <label
                 for="exampleFormControlInput1"
@@ -383,7 +367,7 @@ const RegistraionForm = () => {
                 />
               </div>
             </div>
-            {/* dropdown 2 */}
+
             <div className="mb-5 input__wrapper">
               <label
                 for="exampleFormControlInput1"
@@ -398,7 +382,7 @@ const RegistraionForm = () => {
                 style={{ width: "50%" }}
                 className="form-select"
                 aria-label="Default select example">
-                <option>Open this select menu</option>
+                <option>select country</option>
                 <option value={"india"}>India</option>
                 <option value={"canada"}>Canada</option>
                 <option value={"australia"}>Australia</option>
